@@ -3,9 +3,6 @@ pipeline {
 
     stages {
         stage('Build & Test') {
-            when {
-                branch 'main'
-            }
             steps {
                 echo 'Build işlemi ve Testler başlıyor...'
                 sh './mvnw clean test'
@@ -13,9 +10,6 @@ pipeline {
         }
 
         stage('Deploy') {
-           when {
-                branch 'main'
-            }
             steps {
                 echo 'URL erişimi başarılı, Deploy işlemi başlatılıyor...'
                 sh 'echo "Deploy Başarıyla Tamamlandı!"'
