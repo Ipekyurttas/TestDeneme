@@ -26,7 +26,7 @@ public class DenemeTest {
 
             System.out.println("URL: " + hedefUrl + " - Response Code: " + responseCode);
 
-            assertEquals(400, responseCode, "URL erişilebilir değil! Beklenen kod: 200, Gelen: " + responseCode);
+            assertEquals(200, responseCode, "URL erişilebilir değil! Beklenen kod: 200, Gelen: " + responseCode);
 
         } catch (IOException e) {
             fail("URL'e erişim sırasında hata oluştu: " + e.getMessage());
