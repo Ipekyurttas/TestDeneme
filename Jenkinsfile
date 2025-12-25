@@ -3,6 +3,9 @@ pipeline {
 
     stages {
         stage('Build & Test') {
+            when {
+                branch 'main'
+            }
             steps {
                 echo 'Build işlemi ve Testler başlıyor...'
                 sh './mvnw clean test'
@@ -10,6 +13,9 @@ pipeline {
         }
 
         stage('Deploy') {
+            when {
+                branch 'main'
+            }
             steps {
                 echo 'URL erişimi başarılı, Deploy işlemi başlatılıyor...'
                 sh 'echo "Deploy Başarıyla Tamamlandı!"'
@@ -19,7 +25,7 @@ pipeline {
 
     post {
         failure {
-            echo 'HATA: URL erişimi sağlanamadığı için pipeline durduruldu!'
+            echo 'HATA: Pipeline başarısız oldu veya durduruldu!'
         }
         success {
             echo 'BAŞARILI: Tüm adımlar tamamlandı.'
