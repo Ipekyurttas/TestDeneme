@@ -19,7 +19,7 @@ public class DenemeTest {
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-            connection.setConnectTimeout(5000); // 5 saniye zaman aşımı
+            connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
 
             int responseCode = connection.getResponseCode();
